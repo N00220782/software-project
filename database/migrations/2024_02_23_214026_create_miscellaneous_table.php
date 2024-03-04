@@ -16,7 +16,7 @@ return new class extends Migration
             $table->string('name');
             $table->string('price');
             $table->string('description');
-            $table->string('condition');
+            $table->enum('condition', ['Brand New', 'Excellent', 'Good', 'Fair']);
             $table->string('image')->default('product.jpg');
             $table->timestamps();
         });

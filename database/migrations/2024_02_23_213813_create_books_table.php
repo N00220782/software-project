@@ -18,7 +18,7 @@ return new class extends Migration
             $table->string('description');
             $table->string('rating');
             $table->enum('cover', ['Hardback', 'Paperback']);
-            $table->string('condition');
+            $table->enum('condition', ['Brand New', 'Excellent', 'Good', 'Fair']);
             $table->string('image')->default('product.jpg');
             $table->timestamps();
         });

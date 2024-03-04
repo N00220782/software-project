@@ -18,8 +18,8 @@ return new class extends Migration
             $table->string('description');
             $table->string('size');
             $table->string('brand');
-            $table->string('color');
-            $table->string('condition');
+            $table->enum('color', ['Black', 'Grey', 'White', 'Brown', 'Tan', 'Cream', 'Yellow', 'Red', 'Burgundy', 'Orange', 'Pink', 'Purple', 'Blue', 'Navy', 'Green', 'Khaki', 'Silver', 'Gold', 'Multi']);
+            $table->enum('condition', ['Brand New', 'Excellent', 'Good', 'Fair']);
             $table->string('image')->default('product.jpg');
             $table->timestamps();
         });
