@@ -15,6 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('name');
             $table->string('price');
+            $table->string('original_website');
             $table->string('description');
             $table->string('size');
             $table->string('brand');

@@ -14,7 +14,9 @@ return new class extends Migration
         Schema::create('books', function (Blueprint $table) {
             $table->id();
             $table->string('name');
+            $table->string('author');
             $table->string('price');
+            $table->string('original_website');
             $table->string('description');
             $table->string('rating');
             $table->enum('cover', ['Hardback', 'Paperback']);
