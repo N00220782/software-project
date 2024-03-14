@@ -16,8 +16,8 @@ class DatabaseSeeder extends Seeder
             RoleSeeder::class,
             UserSeeder::class,
             ClothesSeeder::class,
-            // BookSeeder::class,
-            // MiscellaneousSeeder::class
+            BookSeeder::class,
+            MiscellaneousSeeder::class
         ]);
 
         \App\Models\User::factory(10)->create();

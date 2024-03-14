@@ -5,7 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Clothes extends Model
+class Wishlist extends Model
 {
     use HasFactory;
 
@@ -24,7 +24,7 @@ class Clothes extends Model
         return $this->hasMany(Books::class);
     }
 
-    public function miscellaneous() {
+    public function miscellaneouses() {
         return $this->hasMany(Miscellaneous::class);
     }
 

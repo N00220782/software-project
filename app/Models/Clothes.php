@@ -12,6 +12,7 @@ class Clothes extends Model
     protected $fillable = [
         'name',
         'price',
+        'original_website',
         'description',
         'size',
         'brand',

@@ -11,7 +11,7 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('wishlist', function (Blueprint $table) {
+        Schema::create('wishlists', function (Blueprint $table) {
             $table->id();
             $table->foreignId('user_id');
             $table->foreignId('clothes_id');
@@ -21,7 +21,7 @@ return new class extends Migration
             $table->foreign('user_id')->references('id')->on('users')->onUpdate('cascade')->onDelete('cascade');
             $table->foreign('clothes_id')->references('id')->on('clothes')->onUpdate('cascade')->onDelete('restrict');
             $table->foreign('book_id')->references('id')->on('books')->onUpdate('cascade')->onDelete('restrict');
-            $table->foreign('miscellaneous_id')->references('id')->on('miscellaneous')->onUpdate('cascade')->onDelete('restrict');
+            $table->foreign('miscellaneous_id')->references('id')->on('miscellaneouses')->onUpdate('cascade')->onDelete('restrict');
             $table->timestamps();
         });
     }
