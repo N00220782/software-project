@@ -4,10 +4,12 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Laravel\Scout\Searchable;
 
 class Clothes extends Model
 {
     use HasFactory;
+    use Searchable;
 
     protected $fillable = [
         'name',
@@ -23,6 +25,18 @@ class Clothes extends Model
 
     public function wishlists(){
         return $this->belongsTo(Wishlist::class);
+    }
+
+    public function toSearchableArray(): array
+    {
+	    // All model attributes are made searchable
+        $array = $this->toArray();
+
+		// Then we add some additional fields
+        $array['name'] = $this->clothes->name;
+        $array['brand'] = $this->clothes->brand;
+
+        return $array;
     }
 
 }

@@ -134,9 +134,18 @@ return [
         'host' => env('MEILISEARCH_HOST', 'http://localhost:7700'),
         'key' => env('MEILISEARCH_KEY'),
         'index-settings' => [
-            // 'users' => [
-            //     'filterableAttributes'=> ['id', 'name', 'email'],
-            // ],
+            Clothes::class => [
+                'filterableAttributes' => ['color', 'brand', 'condition'],
+                'sortableAttributes' => ['price']
+            ],
+            Book::class => [
+                'filterableAttributes' => ['cover', 'author', 'condition'],
+                'sortableAttributes' => ['price']
+            ],
+            Miscellaneous::class => [
+                'filterableAttributes' => ['condition'],
+                'sortableAttributes' => ['price']
+            ],
         ],
     ],
 

@@ -12,26 +12,25 @@
 
                 <!-- Navigation Links -->
                 <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
-                    <x-nav-link :href="route('clothes.index')" :active="request()->routeIs('clothes.index')">
+                    <x-nav-link :href="route('admin.clothes.index')" :active="request()->routeIs('admin.clothes.index')">
                         {{ __('Clothes') }}
                     </x-nav-link>
                 </div>
                 <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
-                    <x-nav-link :href="route('books.index')" :active="request()->routeIs('books.index')">
+                    <x-nav-link :href="route('admin.books.index')" :active="request()->routeIs('admin.books.index')">
                         {{ __('Books') }}
                     </x-nav-link>
                 </div>
                 <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
-                    <x-nav-link :href="route('miscellaneouses.index')" :active="request()->routeIs('miscellaneouses.index')">
+                    <x-nav-link :href="route('admin.miscellaneouses.index')" :active="request()->routeIs('admin.miscellaneouses.index')">
                         {{ __('Miscellaneous') }}
                     </x-nav-link>
                 </div>
                 <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
-                    <x-nav-link :href="route('wishlist.index')" :active="request()->routeIs('wishlist.index')">
+                    <x-nav-link :href="route('admin.wishlist.index')" :active="request()->routeIs('admin.wishlist.index')">
                         {{ __('Wishlist') }}
                     </x-nav-link>
                 </div>
-                
             </div>
 
             <!-- Settings Dropdown -->
