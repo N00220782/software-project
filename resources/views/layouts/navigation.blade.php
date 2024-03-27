@@ -26,12 +26,6 @@
                         {{ __('Miscellaneous') }}
                     </x-nav-link>
                 </div>
-                <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
-                    <x-nav-link :href="route('wishlist.index')" :active="request()->routeIs('wishlist.index')">
-                        {{ __('Wishlist') }}
-                    </x-nav-link>
-                </div>
-                
             </div>
 
             <!-- Settings Dropdown -->
@@ -115,4 +109,34 @@
             </div>
         </div>
     </div>
+
+    {{-- <div id="table-search">
+        <meilisearch index-name="{{ $indexName }}" api-key="{{ $meilisearchToken }}">
+            <div class="sticky top-0 mb-8 bg-gray-50 py-6 shadow-sm">
+                <div class="flex px-10">
+                    <h1 class="text-2xl font-semibold">
+                        @yield('title')
+                    </h1>
+                    <div class="ml-auto flex gap-4">
+                        <div>
+                            @yield('filter')
+                        </div>
+                        <div>
+                            @yield('sort')
+                        </div>
+                        <div>
+                            @yield('search-bar')
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <main class="px-10">
+                @yield('table')
+            </main>
+        </meilisearch>
+    </div>
+    @push('scripts')
+    @vite('resources/js/table-search.js')
+    @endpush --}}
 </nav>
