@@ -18,7 +18,7 @@ return new class extends Migration
             $table->string('original_website');
             $table->string('description');
             $table->enum('condition', ['Brand New', 'Excellent', 'Good', 'Fair']);
-            $table->string('image')->default('product.jpg');
+            $table->string('image')->default('cover.jpg');
             $table->timestamps();
         });
     }

@@ -57,7 +57,7 @@ class ClothesController extends Controller
 
             $image->storeAs('public/images', $filename);
     
-            $clothes = Clothes::create([
+            $cloth = Clothes::create([
                 'name' => $request->name,
                 'price' => $request->price,
                 'original_website' => $request->original_website,
@@ -78,10 +78,10 @@ class ClothesController extends Controller
      */
     public function show(string $id)
     {
-        $clothes = Clothes::findOrFail($id);
+        $cloth = Clothes::findOrFail($id);
 
         return view('admin.clothes.show', [
-            'clothes' => $clothes 
+            'cloth' => $cloth 
         ]);
     }
 

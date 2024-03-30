@@ -27,16 +27,16 @@ class Book extends Model
         return $this->belongsTo(Wishlist::class);
     }
 
-    public function toSearchableArray(): array
-    {
-	    // All model attributes are made searchable
-        $array = $this->toArray();
+    // public function toSearchableArray(): array
+    // {
+	//     // All model attributes are made searchable
+    //     $array = $this->toArray();
 
-		// Then we add some additional fields
-        $array['name'] = $this->book->name;
-        $array['author'] = $this->book->author;
+	// 	// Then we add some additional fields
+    //     $array['name'] = $this->book->name;
+    //     $array['author'] = $this->book->author;
 
-        return $array;
-    }
+    //     return $array;
+    // }
 
 }
