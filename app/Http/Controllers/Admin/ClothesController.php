@@ -90,9 +90,9 @@ class ClothesController extends Controller
      */
     public function edit(string $id)
     {
-        $clothes = Clothes::findOrFail($id);
+        $cloth = Clothes::findOrFail($id);
         return view('admin.clothes.edit', [
-            'clothes' => $clothes 
+            'cloth' => $cloth 
         ]);
     }
 
@@ -113,7 +113,7 @@ class ClothesController extends Controller
             'image' => 'file|image'
         ]);
 
-        $clothes = Clothes::findOrFail($id);
+        $cloth = Clothes::findOrFail($id);
 
         $image = $request->file('image');
         $extension = $image->getClientOriginalExtension();
@@ -121,7 +121,7 @@ class ClothesController extends Controller
 
         $image->storeAs('public/images', $filename);
 
-        $clothes = Clothes::where('id',$id)->update([
+        $cloth = Clothes::where('id',$id)->update([
             'name' => $request->name,
             'price' => $request->price,
             'original_website' => $request->original_website,

@@ -41,8 +41,9 @@ Route::get('/clothes', [UserClothesController::class, 'index'])->middleware(['au
 Route::get('/clothes/{clothes}', [UserClothesController::class, 'show'])->middleware(['auth', 'role:user,admin'])->name('clothes.show');
 
 Route::resource('/admin/clothes', AdminClothesController::class)->middleware(['auth', 'role:admin'])->names('admin.clothes');
-Route::post('admin/clothes/{clothes}', [AdminClothesController::class, 'update'])->middleware(['auth', 'role:admin'])->name('clothes.update');
-Route::delete('admin/clothes/{clothes}', [AdminClothesController::class, 'destroy'])->middleware(['auth', 'role:admin'])->name('clothes.destroy');
+Route::post('admin/clothes', [AdminClothesController::class, 'store'])->middleware(['auth', 'role:admin'])->name('admin.clothes.store');
+Route::post('admin/clothes/{cloth}', [AdminClothesController::class, 'update'])->middleware(['auth', 'role:admin'])->name('clothes.update');
+Route::delete('admin/clothes/{cloth}', [AdminClothesController::class, 'destroy'])->middleware(['auth', 'role:admin'])->name('clothes.destroy');
 
 Route::get('/books', [UserBookController::class, 'index'])->middleware(['auth', 'role:user,admin'])->name('books.index');
 Route::get('/books/{book}', [UserBookController::class, 'show'])->middleware(['auth', 'role:user,admin'])->name('books.show');

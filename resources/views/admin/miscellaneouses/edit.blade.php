@@ -2,13 +2,13 @@
 
 @section('header')
 <h2 class="font-semibold text-xl text-gray-800 dark:text-gray-200 leading-tight">
-    {{ __('Create a book') }}
+    {{ __('Edit a miscellaneous item') }}
 </h2>
 @endsection
 
 @section('sort')
     @php
-        $sortingOptions = ['value' => 'books:price:asc', 'label' => 'Sort by Price'];
+        $sortingOptions = ['value' => 'miscellaneouses:price:asc', 'label' => 'Sort by Price'];
     @endphp
     <search-sort-by :sorting-options="{{ Js::from($sortingOptions) }}"></search-sort-by>
 @endsection
@@ -25,7 +25,7 @@
 <div class="py-12">
     <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
         <div class="my-6 p-6 bg-white border-b border-gray-200 shadow-sm sm:rounded-lg">
-            <form enctype="multipart/form-data" action="{{ route('admin.books.store') }}" method="POST">
+            <form enctype="multipart/form-data" action="{{ route('admin.miscellaneouses.update', $miscellaneous->id) }}" method="POST">
                 @csrf
                 <x-text-input
                     type="text"
@@ -35,18 +35,6 @@
                     class="w-full"
                     autocomplete="off"
                     :value="@old('name')"></x-text-input>
-
-                    <br>
-                <br>
-
-                <x-text-input
-                    type="text"
-                    name="author"
-                    field="author"
-                    placeholder="Author"
-                    class="w-full"
-                    autocomplete="off"
-                    :value="@old('author')"></x-text-input>
 
                     <br>
                 <br>
@@ -85,28 +73,6 @@
                     :value="@old('description')"></textarea>
 
                     <br>
-                <br>
-
-                <x-text-input
-                    type="text"
-                    name="rating"
-                    field="rating"
-                    placeholder="Rating"
-                    class="w-full"
-                    autocomplete="off"
-                    :value="@old('rating')"></x-text-input>
-
-                    <br>
-                    <br>
-
-                <div class="form-group">
-                    <label for="cover">Cover</label>
-                    <select id="cover" name="cover">
-                        <option value="Hardback">Hardback</option>
-                        <option value="Paperback">Paperback</option>
-                    </select>
-                </div>
-
                 <br>
 
                 <div class="form-group">

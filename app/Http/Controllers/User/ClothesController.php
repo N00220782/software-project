@@ -29,10 +29,10 @@ class ClothesController extends Controller
      */
     public function show(string $id)
     {
-        $clothes = Clothes::findOrFail($id);
+        $cloth = Clothes::findOrFail($id);
 
         return view('user.clothes.show', [
-            'clothes' => $clothes 
+            'cloth' => $cloth 
         ]);
     }
 
