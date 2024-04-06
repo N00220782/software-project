@@ -33,6 +33,11 @@
                     <p><b>Original Website:</b> {{ $miscellaneous->original_website }}</p>
                     <p><b>Description:</b> {{ $miscellaneous->description }}</p> 
                     <p><b>Condition:</b> {{ $miscellaneous->condition }}</p> 
+                    <form method="POST" action="{{ route('miscellaneouses.like', $miscellaneous->id) }}">
+                        @csrf
+                        @method('POST')
+                        <button type="submit" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Like</button>
+                    </form>
                 </div>  
             </div>
         </div>

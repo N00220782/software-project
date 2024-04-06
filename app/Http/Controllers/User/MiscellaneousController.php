@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\User;
 use App\Http\Controllers\Controller;
 use App\Models\Miscellaneous;
+use App\Models\Wishlist;
 use Illuminate\Http\Request;
 use Auth;
 
@@ -24,9 +25,20 @@ class MiscellaneousController extends Controller
         return view('user.miscellaneouses.index')->with('miscellaneouses', $miscellaneouses);
     }
 
-    /**
-     * Show the form for creating a new resource.
-     */
+    public function like(string $id)
+    {
+
+            $user = Auth::user()->id;
+            $miscellaneous = Miscellaneous::findOrFail($id)->id;
+    
+            $item = Wishlist::create([
+                'user_id' => $user,
+                'miscellaneous_id' => $miscellaneous
+            ]);
+
+            return to_route('user.miscellaneouses.index')->with('status', 'Item added to wishlist :)');
+        
+    }
 
     /**
      * Display the specified resource.

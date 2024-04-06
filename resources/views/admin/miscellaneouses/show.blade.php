@@ -33,7 +33,12 @@
                     <p><b>Original Website:</b> {{ $miscellaneous->original_website }}</p>
                     <p><b>Description:</b> {{ $miscellaneous->description }}</p> 
                     <p><b>Condition:</b> {{ $miscellaneous->condition }}</p> 
-                        <a href="{{ route('admin.miscellaneouses.edit', $miscellaneous->id) }}" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Edit</a>
+                    <form method="POST" action="{{ route('miscellaneouses.like', $miscellaneous->id) }}">
+                        @csrf
+                        @method('POST')
+                        <button type="submit" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Like</button>
+                    </form>
+                    <a href="{{ route('admin.miscellaneouses.edit', $miscellaneous->id) }}" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Edit</a>
                         <form method="POST" action="{{ route('miscellaneouses.destroy', $miscellaneous->id) }}">
                             @csrf
                             @method('DELETE')

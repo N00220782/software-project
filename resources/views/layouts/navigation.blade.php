@@ -25,6 +25,11 @@
                     <x-nav-link :href="route('miscellaneouses.index')" :active="request()->routeIs('miscellaneouses.index')">
                         {{ __('Miscellaneous') }}
                     </x-nav-link>
+                    <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                        <x-nav-link :href="route('wishlist.index')" :active="request()->routeIs('wishlist.index')">
+                            {{ __('Wishlist') }}
+                        </x-nav-link>
+                    </div>
                 </div>
             </div>
 

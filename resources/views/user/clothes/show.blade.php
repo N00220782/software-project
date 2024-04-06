@@ -35,6 +35,11 @@
                     <p><b>Size:</b> {{ $cloth->size }}</p>
                     <p><b>Brand:</b> {{ $cloth->brand }}</p> 
                     <p><b>Condition:</b> {{ $cloth->condition }}</p> 
+                    <form method="POST" action="{{ route('clothes.like', $cloth->id) }}">
+                        @csrf
+                        @method('POST')
+                        <button type="submit" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Like</button>
+                    </form>
                 </div>  
             </div>
         </div>

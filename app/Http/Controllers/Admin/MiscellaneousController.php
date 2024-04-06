@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Models\Miscellaneous;
+use App\Models\Wishlist;
 use Illuminate\Http\Request;
 use Auth;
 
@@ -64,6 +65,21 @@ class MiscellaneousController extends Controller
             ]);
 
             return to_route('admin.miscellaneouses.index')->with('status', 'Item created successfully :)');
+        
+    }
+
+    public function like(string $id)
+    {
+
+            $user = Auth::user()->id;
+            $miscellaneous = Miscellaneous::findOrFail($id)->id;
+    
+            $item = Wishlist::create([
+                'user_id' => $user,
+                'miscellaneous_id' => $miscellaneous
+            ]);
+
+            return to_route('admin.miscellaneouses.index')->with('status', 'Item added to wishlist :)');
         
     }
 

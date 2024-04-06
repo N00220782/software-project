@@ -36,6 +36,11 @@
                     <p><b>Rating:</b> {{ $book->rating }}</p>
                     <p><b>Cover:</b> {{ $book->cover }}</p> 
                     <p><b>Condition:</b> {{ $book->condition }}</p> 
+                    <form method="POST" action="{{ route('books.like', $book->id) }}">
+                        @csrf
+                        @method('POST')
+                        <button type="submit" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Like</button>
+                    </form>
                 </div>  
             </div>
         </div>

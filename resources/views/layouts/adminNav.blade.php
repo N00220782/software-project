@@ -26,6 +26,11 @@
                         {{ __('Miscellaneous') }}
                     </x-nav-link>
                 </div>
+                <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                    <x-nav-link :href="route('admin.wishlist.index')" :active="request()->routeIs('admin.wishlist.index')">
+                        {{ __('Wishlist') }}
+                    </x-nav-link>
+                </div>
             </div>
 
             <!-- Settings Dropdown -->

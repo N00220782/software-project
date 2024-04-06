@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Models\Book;
+use App\Models\Wishlist;
 use Illuminate\Http\Request;
 use Auth;
 
@@ -70,6 +71,21 @@ class BookController extends Controller
             ]);
 
             return to_route('admin.books.index')->with('status', 'Book created successfully :)');
+        
+    }
+
+    public function like(string $id)
+    {
+
+            $user = Auth::user()->id;
+            $book = Book::findOrFail($id)->id;
+    
+            $item = Wishlist::create([
+                'user_id' => $user,
+                'book_id' => $book
+            ]);
+
+            return to_route('admin.books.index')->with('status', 'Item added to wishlist :)');
         
     }
 
