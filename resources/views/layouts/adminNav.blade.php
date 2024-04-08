@@ -116,7 +116,7 @@
     </div>
 
     {{-- <div id="table-search">
-        <meilisearch index-name="{{ $indexName }}" api-key="{{ $meilisearchToken }}">
+        <meilisearch index-name="clothes" api-key="{{ env('MEILISEARCH_KEY') }}">
             <div class="sticky top-0 mb-8 bg-gray-50 py-6 shadow-sm">
                 <div class="flex px-10">
                     <h1 class="text-2xl font-semibold">

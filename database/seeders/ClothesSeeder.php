@@ -139,7 +139,7 @@ class ClothesSeeder extends Seeder
         $c10->brand = 'Champion';
         $c10->color = 'Grey';
         $c10->condition = 'Fair';
-        $c9->image = 'champion.jpg';
+        $c10->image = 'champion.jpg';
         $c10->timestamps;
         $c10->save();
 

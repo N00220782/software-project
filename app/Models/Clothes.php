@@ -27,16 +27,16 @@ class Clothes extends Model
         return $this->belongsTo(Wishlist::class);
     }
 
-    // public function toSearchableArray(): array
-    // {
-	//     // All model attributes are made searchable
-    //     $array = $this->toArray();
+    public function toSearchableArray(): array
+    {
+	    // All model attributes are made searchable
+        $array = $this->toArray();
 
-	// 	// Then we add some additional fields
-    //     $array['name'] = $this->clothes->name;
-    //     $array['brand'] = $this->clothes->brand;
+		// Then we add some additional fields
+        $array['name'] = $this->name;
+        $array['brand'] = $this->brand;
 
-    //     return $array;
-    // }
+        return $array;
+    }
 
 }

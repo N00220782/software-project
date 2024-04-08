@@ -43,24 +43,16 @@
                                         <img class="rounded" width="200" src={{ asset("storage/images/" . $item->image) }} />
                                     </th>
                                     <td class="px-6 py-4">
-                                        {{ $item->cloth->name }}
-                                        {{ $item->miscellaneous->name }}
-                                        {{ $item->book->name }}
+                                        {{ $item->name }}
                                     </td>
                                     <td class="px-6 py-4">
-                                        {{ $item->cloth->price }}
-                                        {{ $item->miscellaneous->price }}
-                                        {{ $item->book->price }}
+                                        {{ $item->price }}
                                     </td>
                                     <td class="px-6 py-4">
-                                        {{ $item->cloth->original_website }}
-                                        {{ $item->miscellaneous->original_website }}
-                                        {{ $item->book->original_website }}
+                                        {{ $item->original_website }}
                                     </td>
                                     <td class="px-6 py-4">
-                                        {{ $item->cloth->condition }}
-                                        {{ $item->miscellaneous->condition }}
-                                        {{ $item->book->condition }}
+                                        {{ $item->condition }}
                                     </td>
                                     <td class="px-6 py-4">
                                         <form method="POST" action="{{ route('admin.wishlist.destroy', $item->id) }}">

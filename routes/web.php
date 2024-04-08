@@ -76,6 +76,7 @@ Route::delete('admin/miscellaneouses/{miscellaneous}', [AdminMiscellaneousContro
 Route::post('/miscellaneouses/{miscellaneous}', [AdminMiscellaneousController::class, 'like'])->middleware(['auth', 'role:admin'])->name('miscellaneouses.like');
 
 /* user wishlist */
+Route::resource('/wishlist', UserWishlistController::class)->middleware(['auth', 'role:user,admin'])->names('wishlist');
 Route::get('/wishlist', [UserWishlistController::class, 'index'])->middleware(['auth', 'role:user,admin'])->name('wishlist.index');
 Route::delete('wishlist', [UserWishlistController::class, 'destroy'])->middleware(['auth', 'role:user,admin'])->name('wishlist.destroy');
 

@@ -24,15 +24,15 @@ class Miscellaneous extends Model
         return $this->belongsTo(Wishlist::class);
     }
 
-    // public function toSearchableArray(): array
-    // {
-	//     // All model attributes are made searchable
-    //     $array = $this->toArray();
+    public function toSearchableArray(): array
+    {
+	    // All model attributes are made searchable
+        $array = $this->toArray();
 
-	// 	// Then we add some additional fields
-    //     $array['name'] = $this->miscellaneous->name;
+		// Then we add some additional fields
+        $array['name'] = $this->name;
 
-    //     return $array;
-    // }
+        return $array;
+    }
 
 }

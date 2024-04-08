@@ -1,28 +1,52 @@
 @extends('layouts.admin')
 
-@section('header')
-<h2 class="font-semibold text-xl text-gray-800 dark:text-gray-200 leading-tight">
-    {{ __('Miscellaneous Items') }}
-</h2>
-@endsection
-
-@section('sort')
-    @php
-        $sortingOptions = ['value' => 'miscellaneous:price:asc', 'label' => 'Sort by Price'];
-    @endphp
-    <search-sort-by :sorting-options="{{ Js::from($sortingOptions) }}"></search-sort-by>
-@endsection
-
-@section('search-bar')
-    <search-bar placeholder="Search products..."></search-bar>
-@endsection
-
 @section('table')
     <item-list></item-list>
 @endsection
 
 @section('content')
     <div class="py-12">
+
+
+
+
+        <div id="table-search">
+            <meilisearch index-name="miscellaneouses" api-key="{{ env('MEILISEARCH_KEY') }}">
+                <div class="sticky top-0 mb-8 bg-gray-50 py-6 shadow-sm">
+                    <div class="flex px-10">
+                        <h1 class="text-2xl font-semibold">
+                            <h2 class="font-semibold text-xl text-gray-800 dark:text-gray-200 leading-tight">
+                                {{ __('Miscellaneous Items') }}
+                            </h2>
+                        </h1>
+                        <div class="ml-auto flex gap-4">
+                            {{-- <div>
+                                @yield('filter')
+                            </div> --}}
+                            <div>
+                                @php
+                                $sortingOptions = ['value' => 'miscellaneouses:price:asc', 'label' => 'Sort by Price'];
+                            @endphp
+                            <search-sort-by :sorting-options="{{ Js::from($sortingOptions) }}"></search-sort-by>
+                            </div>
+                            <div>
+                                <search-bar placeholder="Search products..."></search-bar>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+    
+                <main class="px-10">
+                    <item-list></item-list>
+                </main>
+            </meilisearch>
+        </div>
+       
+
+
+
+
+
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg">
                 <div class="p-6 text-gray-900 dark:text-gray-100">
@@ -87,4 +111,9 @@
             </div>
         </div>
     </div>
+
+    @push('head')
+    {{-- @vite(['resources/js/table-search.js']) --}}
+    <script src="{{ asset('js/table-search.js') }}"></script>
+    @endpush
 @endsection
