@@ -14,11 +14,12 @@ class MiscellaneousSeeder extends Seeder
     public function run(): void
     {
         $m1 = New Miscellaneous;
-        $m1->name = 'Pikachu Squishmallow';
+        $m1->name = 'Eevee Plushie';
         $m1->price = '€20';
         $m1->original_website = 'Facebook Marketplace';
         $m1->description = fake()->realText();
         $m1->condition = 'Excellent';
+        $m1->image = 'eevee.webp';
         $m1->timestamps;
         $m1->save();
 
@@ -28,6 +29,7 @@ class MiscellaneousSeeder extends Seeder
         $m2->original_website = 'Adverts.ie';
         $m2->description = fake()->realText();
         $m2->condition = 'Good';
+        $m2->image = 'twilight.webp';
         $m2->timestamps;
         $m2->save();
 
@@ -37,6 +39,7 @@ class MiscellaneousSeeder extends Seeder
         $m3->original_website = 'Depop';
         $m3->description = fake()->realText();
         $m3->condition = 'Brand New';
+        $m3->image = 'oil.jpg';
         $m3->timestamps;
         $m3->save();
 
@@ -46,6 +49,7 @@ class MiscellaneousSeeder extends Seeder
         $m4->original_website = 'eBay';
         $m4->description = fake()->realText();
         $m4->condition = 'Brand New';
+        $m4->image = 'cup.jpg';
         $m4->timestamps;
         $m4->save();
 
@@ -55,6 +59,7 @@ class MiscellaneousSeeder extends Seeder
         $m5->original_website = 'Facebook Marketplace';
         $m5->description = fake()->realText();
         $m5->condition = 'Brand New';
+        $m5->image = 'candle.webp';
         $m5->timestamps;
         $m5->save();
 
@@ -64,6 +69,7 @@ class MiscellaneousSeeder extends Seeder
         $m6->original_website = 'Adverts.ie';
         $m6->description = fake()->realText();
         $m6->condition = 'Excellent';
+        $m6->image = 'case.jpg';
         $m6->timestamps;
         $m6->save();
 
@@ -73,6 +79,7 @@ class MiscellaneousSeeder extends Seeder
         $m7->original_website = 'Depop';
         $m7->description = fake()->realText();
         $m7->condition = 'Excellent';
+        $m7->image = 'pony.jpg';
         $m7->timestamps;
         $m7->save();
 
@@ -82,6 +89,7 @@ class MiscellaneousSeeder extends Seeder
         $m8->original_website = 'eBay';
         $m8->description = fake()->realText();
         $m8->condition = 'Brand New';
+        $m8->image = 'cow.jpg';
         $m8->timestamps;
         $m8->save();
 
@@ -91,6 +99,7 @@ class MiscellaneousSeeder extends Seeder
         $m9->original_website = 'Facebook Marketplace';
         $m9->description = fake()->realText();
         $m9->condition = 'Excellent';
+        $m9->image = 'wall.webp';
         $m9->timestamps;
         $m9->save();
 
@@ -100,6 +109,7 @@ class MiscellaneousSeeder extends Seeder
         $m10->original_website = 'Adverts.ie';
         $m10->description = fake()->realText();
         $m10->condition = 'Excellent';
+        $m10->image = 'cat.jpg';
         $m10->timestamps;
         $m10->save();
 
@@ -109,6 +119,7 @@ class MiscellaneousSeeder extends Seeder
         $m11->original_website = 'Depop';
         $m11->description = fake()->realText();
         $m11->condition = 'Brand New';
+        $m11->image = 'mug.jpg';
         $m11->timestamps;
         $m11->save();
 
@@ -118,43 +129,8 @@ class MiscellaneousSeeder extends Seeder
         $m12->original_website = 'eBay';
         $m12->description = fake()->realText();
         $m12->condition = 'Brand New';
+        $m12->image = 'lush.webp';
         $m12->timestamps;
         $m12->save();
-
-        $m13 = New Miscellaneous;
-        $m13->name = 'Rose Quartz Crystal';
-        $m13->price = '€5';
-        $m13->original_website = 'Facebook Marketplace';
-        $m13->description = fake()->realText();
-        $m13->condition = 'Excellent';
-        $m13->timestamps;
-        $m13->save();
-
-        $m14 = New Miscellaneous;
-        $m14->name = 'Stag Table Lamp';
-        $m14->price = '€20';
-        $m14->original_website = 'Adverts.ie';
-        $m14->description = fake()->realText();
-        $m14->condition = 'Excellent';
-        $m14->timestamps;
-        $m14->save();
-
-        $m15 = New Miscellaneous;
-        $m15->name = 'Set of Coasters';
-        $m15->price = '€10';
-        $m15->original_website = 'Depop';
-        $m15->description = fake()->realText();
-        $m15->condition = 'Brand New';
-        $m15->timestamps;
-        $m15->save();
-
-        $m16 = New Miscellaneous;
-        $m16->name = 'Dog Harness and Lead';
-        $m16->price = '€15';
-        $m16->original_website = 'eBay';
-        $m16->description = fake()->realText();
-        $m16->condition = 'Excellent';
-        $m16->timestamps;
-        $m16->save();
     }
 }

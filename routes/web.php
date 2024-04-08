@@ -40,6 +40,7 @@ Route::middleware('auth')->group(function () {
 Route::get('/home', [HomeController::class, 'index'])->name('home.index');
 
 /* user clothes */
+Route::resource('/clothes', UserClothesController::class)->middleware(['auth', 'role:user,admin'])->names('user.clothes');
 Route::get('/clothes', [UserClothesController::class, 'index'])->middleware(['auth', 'role:user,admin'])->name('clothes.index');
 Route::get('/clothes/{cloth}', [UserClothesController::class, 'show'])->middleware(['auth', 'role:user,admin'])->name('clothes.show');
 Route::post('/clothes/{cloth}', [UserClothesController::class, 'like'])->middleware(['auth', 'role:user,admin'])->name('clothes.like');
@@ -51,6 +52,7 @@ Route::delete('admin/clothes/{cloth}', [AdminClothesController::class, 'destroy'
 Route::post('/clothes/{cloth}', [AdminClothesController::class, 'like'])->middleware(['auth', 'role:admin'])->name('clothes.like');
 
 /* user books */
+Route::resource('/books', UserBookController::class)->middleware(['auth', 'role:user,admin'])->names('user.books');
 Route::get('/books', [UserBookController::class, 'index'])->middleware(['auth', 'role:user,admin'])->name('books.index');
 Route::get('/books/{book}', [UserBookController::class, 'show'])->middleware(['auth', 'role:user,admin'])->name('books.show');
 Route::post('/books/{book}', [UserBookController::class, 'like'])->middleware(['auth', 'role:user,admin'])->name('books.like');
@@ -62,6 +64,7 @@ Route::delete('admin/books/{book}', [AdminBookController::class, 'destroy'])->mi
 Route::post('/books/{book}', [AdminBookController::class, 'like'])->middleware(['auth', 'role:admin'])->name('books.like');
 
 /* user miscellaneouses */
+Route::resource('/miscellaneouses', UserMiscellaneousController::class)->middleware(['auth', 'role:user,admin'])->names('user.miscellaneouses');
 Route::get('/miscellaneouses', [UserMiscellaneousController::class, 'index'])->middleware(['auth', 'role:user,admin'])->name('miscellaneouses.index');
 Route::get('/miscellaneouses/{miscellaneous}', [UserMiscellaneousController::class, 'show'])->middleware(['auth', 'role:user,admin'])->name('miscellaneouses.show');
 Route::post('/miscellaneouses/{miscellaneous}', [UserMiscellaneousController::class, 'like'])->middleware(['auth', 'role:user,admin'])->name('miscellaneouses.like');
