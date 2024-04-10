@@ -41,7 +41,7 @@ class MiscellaneousController extends Controller
     {
         
             $request->validate([
-                'name' => 'required|string|min:2|max:150',
+                'name' => 'required|string',
                 'price' => 'required',
                 'original_website' => 'required',
                 'description' => 'required',
@@ -112,12 +112,12 @@ class MiscellaneousController extends Controller
     public function update(Request $request, string $id)
     {
         $request->validate([
-            'name' => 'required|string|min:2|max:150',
-                'price' => 'required',
-                'original_website' => 'required',
-                'description' => 'required',
-                'condition' =>'required|in:Brand New,Excellent,Good,Fair',
-                'image' => 'file|image'
+            'name' => 'required|string',
+            'price' => 'required',
+            'original_website' => 'required',
+            'description' => 'required',
+            'condition' =>'required|in:Brand New,Excellent,Good,Fair',
+            'image' => 'file|image'
         ]);
 
         $miscellaneous = Miscellaneous::findOrFail($id);

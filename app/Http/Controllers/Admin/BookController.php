@@ -41,7 +41,7 @@ class BookController extends Controller
     {
         
             $request->validate([
-                'name' => 'required|string|min:2|max:150',
+                'name' => 'required|string',
                 'author' => 'required',
                 'price' => 'required',
                 'original_website' => 'required',
@@ -118,7 +118,7 @@ class BookController extends Controller
     public function update(Request $request, string $id)
     {
         $request->validate([
-            'name' => 'required|string|min:2|max:150',
+            'name' => 'required|string',
             'author' => 'required',
             'price' => 'required',
             'original_website' => 'required',

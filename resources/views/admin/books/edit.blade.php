@@ -27,6 +27,10 @@
         <div class="my-6 p-6 bg-white border-b border-gray-200 shadow-sm sm:rounded-lg">
             <form enctype="multipart/form-data" action="{{ route('admin.books.update', $book->id) }}" method="POST">
                 @csrf
+                <h4 class="text-xl text-gray-800 dark:text-gray-200 leading-tight">
+                    All fields are required!
+                </h4>
+                <br>
                 <x-text-input
                     type="text"
                     name="name"
