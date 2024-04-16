@@ -6,7 +6,7 @@
 </h2>
 @endsection
 
-@section('sort')
+{{-- @section('sort')
     @php
         $sortingOptions = ['value' => 'clothes:price:asc', 'label' => 'Sort by Price'];
     @endphp
@@ -19,7 +19,7 @@
 
 @section('table')
     <item-list></item-list>
-@endsection
+@endsection --}}
 
 @section('content')
     <div class="py-12">
