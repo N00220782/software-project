@@ -1,8 +1,8 @@
 @extends('layouts.admin')
 
 @section('header')
-<h2 class="font-semibold text-xl text-gray-800 dark:text-gray-200 leading-tight">
-    {{ __('Create a miscellaneous item') }}
+<h2 class="font-semibold text-xl text-white leading-tight">
+    {{ __('Miscellaneous Items') }}
 </h2>
 @endsection
 

@@ -1,36 +1,39 @@
-<nav x-data="{ open: false }" class="bg-white dark:bg-gray-800 border-b border-gray-100 dark:border-gray-700">
+<nav x-data="{ open: false }" class="bg-primary border-b border-gray-100 dark:border-gray-700">
     <!-- Primary Navigation Menu -->
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="flex justify-between h-16">
             <div class="flex">
                 <!-- Logo -->
                 <div class="shrink-0 flex items-center">
-                    <a href="{{ route('dashboard') }}">
-                        <x-application-logo class="block h-9 w-auto fill-current text-gray-800 dark:text-gray-200" />
+                    <a href="{{ route('dashboard') }}" class="block w-auto fill-current text-white">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-box2-heart" viewBox="0 0 16 16">
+                            <path d="M8 7.982C9.664 6.309 13.825 9.236 8 13 2.175 9.236 6.336 6.31 8 7.982"/>
+                            <path d="M3.75 0a1 1 0 0 0-.8.4L.1 4.2a.5.5 0 0 0-.1.3V15a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1V4.5a.5.5 0 0 0-.1-.3L13.05.4a1 1 0 0 0-.8-.4zm0 1H7.5v3h-6zM8.5 4V1h3.75l2.25 3zM15 5v10H1V5z"/>
+                        </svg>
                     </a>
                 </div>
 
                 <!-- Navigation Links -->
                 <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
-                    <x-nav-link :href="route('clothes.index')" :active="request()->routeIs('clothes.index')">
+                    <x-nav-link class="text-white" :href="route('clothes.index')" :active="request()->routeIs('clothes.index')">
                         {{ __('Clothes') }}
                     </x-nav-link>
                 </div>
                 <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
-                    <x-nav-link :href="route('books.index')" :active="request()->routeIs('books.index')">
+                    <x-nav-link class="text-white" :href="route('books.index')" :active="request()->routeIs('books.index')">
                         {{ __('Books') }}
                     </x-nav-link>
                 </div>
                 <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
-                    <x-nav-link :href="route('miscellaneouses.index')" :active="request()->routeIs('miscellaneouses.index')">
+                    <x-nav-link class="text-white" :href="route('miscellaneouses.index')" :active="request()->routeIs('miscellaneouses.index')">
                         {{ __('Miscellaneous') }}
                     </x-nav-link>
-                    <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
-                        <x-nav-link :href="route('wishlist.index')" :active="request()->routeIs('wishlist.index')">
-                            {{ __('Wishlist') }}
-                        </x-nav-link>
-                    </div>
                 </div>
+                <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                    <x-nav-link class="text-white" :href="route('wishlist.index')" :active="request()->routeIs('wishlist.index')">
+                        {{ __('Wishlist') }}
+                    </x-nav-link>
+                </div> 
             </div>
 
             <!-- Settings Dropdown -->
