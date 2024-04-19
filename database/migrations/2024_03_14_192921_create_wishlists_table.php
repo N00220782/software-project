@@ -14,9 +14,9 @@ return new class extends Migration
         Schema::create('wishlists', function (Blueprint $table) {
             $table->id();
             $table->foreignId('user_id');
-            $table->foreignId('clothes_id')->unsigned()->nullable();
-            $table->foreignId('book_id')->unsigned()->nullable();
-            $table->foreignId('miscellaneous_id')->unsigned()->nullable();
+            $table->foreignId('clothes_id')->unsigned()->nullable()->constrained(table: 'clothes', indexName: 'wishlists_cloth_id');
+            $table->foreignId('book_id')->unsigned()->nullable()->constrained(table: 'books', indexName: 'wishlists_book_id');
+            $table->foreignId('miscellaneous_id')->unsigned()->nullable()->constrained(table: 'miscellaneouses', indexName: 'wishlists_miscellaneous_id');
 
             $table->foreign('user_id')->references('id')->on('users')->onUpdate('cascade')->onDelete('cascade');
             $table->foreign('clothes_id')->references('id')->on('clothes')->onUpdate('cascade')->onDelete('restrict');

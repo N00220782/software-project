@@ -23,7 +23,7 @@ class WishlistController extends Controller
         if(Auth::user()->hasRole('admin')){
             return to_route('admin.wishlist.index');
         }
-        $items = Wishlist::paginate(10);
+        $items = Wishlist::paginate(4);
         return view('user.wishlist.index')->with('items', $items);
     }
 
