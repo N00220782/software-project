@@ -21,7 +21,10 @@
     <body class="antialiased">
         <div class="relative sm:flex sm:justify-center sm:items-center min-h-screen bg-center bg-body selection:bg-red-500 selection:text-white">
             <div class="sm:fixed sm:top-0 sm:center-0 p-6 text-center z-10">
-                <h1 class="mt-6 text-xl font-semibold text-white">Pass It On!</h1>
+                <h1 class="mt-6 text-xl font-semibold text-white flex justify-center align-items-center m-auto">Pass It On!<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="ml-4 bi bi-box2-heart" viewBox="0 0 16 16">
+                    <path d="M8 7.982C9.664 6.309 13.825 9.236 8 13 2.175 9.236 6.336 6.31 8 7.982"/>
+                    <path d="M3.75 0a1 1 0 0 0-.8.4L.1 4.2a.5.5 0 0 0-.1.3V15a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1V4.5a.5.5 0 0 0-.1-.3L13.05.4a1 1 0 0 0-.8-.4zm0 1H7.5v3h-6zM8.5 4V1h3.75l2.25 3zM15 5v10H1V5z"/>
+                </svg></h1>
             </div>
             @if (Route::has('login'))
                 <div class="sm:fixed sm:top-0 sm:right-0 p-6 text-right z-10">
@@ -41,7 +44,7 @@
                 <div class="grid gap-6 lg:gap-8">
                     <div class="scale-100 p-6 bg-white dark:bg-gray-800/50 dark:bg-gradient-to-bl from-gray-700/50 via-transparent dark:ring-1 dark:ring-inset dark:ring-white/5 rounded-lg flex focus:outline focus:outline-2 focus:outline-red-500">
                         <div>
-                            <h2 class="mt-6 text-xl font-semibold text-gray-900 dark:text-white">Log in or register to start browsing!</h2>
+                            <h2 class="text-xl font-semibold text-gray-900 dark:text-white">Log in or register to start browsing!</h2>
                             <p class="mt-4 text-gray-500 dark:text-gray-400 text-sm leading-relaxed">
                                 Welcome to Pass It On, your premier destination for hassle-free online second-hand buying and selling! At Pass It On, we believe in the power of extending the lifecycle of items, reducing waste, and embracing sustainable consumption. Whether you're decluttering your space or hunting for unique treasures, our platform connects you with a community of like-minded individuals ready to give pre-loved items a new home. Join us in fostering a culture of reuse and discovery. Let's pass it on, together!
                             </p>

@@ -39,13 +39,13 @@
                         <form method="POST" action="{{ route('books.like', $book->id) }}">
                             @csrf
                             @method('POST')
-                            <button type="submit" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Like</button>
+                            <button type="submit" class="font-medium text-blue-600 dark:text-blue-500 underline">Like</button>
                         </form>
                         <a href="{{ route('admin.books.edit', $book->id) }}" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Edit</a>
                         <form method="POST" action="{{ route('books.destroy', $book->id) }}">
                             @csrf
                             @method('DELETE')
-                            <button type="submit" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Delete</button>
+                            <button type="submit" class="font-medium text-blue-600 dark:text-blue-500 underline">Delete</button>
                         </form>
                 </div>  
             </div>

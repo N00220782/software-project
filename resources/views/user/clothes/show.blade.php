@@ -38,7 +38,7 @@
                     <form method="POST" action="{{ route('clothes.like', $cloth->id) }}">
                         @csrf
                         @method('POST')
-                        <button type="submit" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Like</button>
+                        <button type="submit" class="font-medium text-blue-600 dark:text-blue-500 underline">Like</button>
                     </form>
                 </div>  
             </div>
