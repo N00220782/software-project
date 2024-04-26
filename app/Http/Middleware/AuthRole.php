@@ -18,7 +18,7 @@ class AuthRole
         //dd($roles);
 
         if (!$request->user() || !$request->user()->hasAnyRole($roles)) {
-            return redirect()->route('home');
+            return redirect()->route('home.index');
           }
         return $next($request);
 

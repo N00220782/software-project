@@ -37,7 +37,7 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
-Route::get('/home', [HomeController::class, 'index'])->name('home.index');
+Route::get('/user/home', [HomeController::class, 'index'])->middleware(['auth', 'role:user'])->name('home.index');
 
 /* user clothes */
 Route::resource('/clothes', UserClothesController::class)->middleware(['auth', 'role:user,admin'])->names('user.clothes');
